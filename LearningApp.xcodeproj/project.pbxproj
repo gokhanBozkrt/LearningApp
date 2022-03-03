@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7086A3327D146A900801379 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7086A3227D146A900801379 /* HomeViewRow.swift */; };
 		F732A05327CFE01100C3A329 /* LearnIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A05227CFE01100C3A329 /* LearnIos.swift */; };
 		F732A05527CFE01100C3A329 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A05427CFE01100C3A329 /* HomeView.swift */; };
 		F732A05727CFE01300C3A329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F732A05627CFE01300C3A329 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7086A3227D146A900801379 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
 		F732A04F27CFE01100C3A329 /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F732A05227CFE01100C3A329 /* LearnIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnIos.swift; sourceTree = "<group>"; };
 		F732A05427CFE01100C3A329 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F732A05427CFE01100C3A329 /* HomeView.swift */,
+				F7086A3227D146A900801379 /* HomeViewRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F732A05527CFE01100C3A329 /* HomeView.swift in Sources */,
+				F7086A3327D146A900801379 /* HomeViewRow.swift in Sources */,
 				F732A05327CFE01100C3A329 /* LearnIos.swift in Sources */,
 				F732A06627CFE25D00C3A329 /* ContentModel.swift in Sources */,
 				F774888527D0A83000644090 /* Models.swift in Sources */,
