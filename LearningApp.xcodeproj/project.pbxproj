@@ -15,7 +15,9 @@
 		F732A06627CFE25D00C3A329 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732A06527CFE25D00C3A329 /* ContentModel.swift */; };
 		F732A06927CFE5EE00C3A329 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = F732A06727CFE5EE00C3A329 /* style.html */; };
 		F732A06A27CFE5EE00C3A329 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F732A06827CFE5EE00C3A329 /* data.json */; };
+		F75AF2B527D351DA008C053A /* ContentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75AF2B427D351DA008C053A /* ContentViews.swift */; };
 		F774888527D0A83000644090 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774888427D0A83000644090 /* Models.swift */; };
+		F7C8A8FC27D3A56500FEB47C /* ContentIViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,9 @@
 		F732A06527CFE25D00C3A329 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		F732A06727CFE5EE00C3A329 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		F732A06827CFE5EE00C3A329 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		F75AF2B427D351DA008C053A /* ContentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViews.swift; sourceTree = "<group>"; };
 		F774888427D0A83000644090 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentIViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				F732A05427CFE01100C3A329 /* HomeView.swift */,
 				F7086A3227D146A900801379 /* HomeViewRow.swift */,
+				F75AF2B427D351DA008C053A /* ContentViews.swift */,
+				F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +202,8 @@
 			files = (
 				F732A05527CFE01100C3A329 /* HomeView.swift in Sources */,
 				F7086A3327D146A900801379 /* HomeViewRow.swift in Sources */,
+				F7C8A8FC27D3A56500FEB47C /* ContentIViewRow.swift in Sources */,
+				F75AF2B527D351DA008C053A /* ContentViews.swift in Sources */,
 				F732A05327CFE01100C3A329 /* LearnIos.swift in Sources */,
 				F732A06627CFE25D00C3A329 /* ContentModel.swift in Sources */,
 				F774888527D0A83000644090 /* Models.swift in Sources */,
