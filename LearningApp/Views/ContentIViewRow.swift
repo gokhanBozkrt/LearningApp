@@ -11,7 +11,7 @@ struct ContentIViewRow: View {
     @EnvironmentObject var model: ContentModel
     var index:Int
     var body: some View {
-        let lesson = model.curentModule!.content.lessons[index]
+        let lesson = model.currentModule!.content.lessons[index]
         // Lesson Card
         ZStack(alignment:.leading) {
         Rectangle()
