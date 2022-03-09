@@ -7,9 +7,9 @@
 
 import SwiftUI
 import AVKit
+
 struct ContentDetailView: View {
     @EnvironmentObject var model: ContentModel
-    
     var body: some View {
         let lesson = model.currentLesson
         let url = URL(string: Constants.videoHostUrl + (lesson?.video ?? ""))
@@ -18,7 +18,8 @@ struct ContentDetailView: View {
             VideoPlayer(player: AVPlayer(url: url!))
                 .cornerRadius(10)
         }
-        // TODO: Description
+        // Description
+            CodeTextView()
         
         // Show Next Lesson Button If there is next lesson
             if model.hasNextLesson() {
@@ -39,6 +40,7 @@ struct ContentDetailView: View {
             }
 
     }
+        .navigationBarTitle(lesson?.title ?? "")
         .padding()
     }
 }
