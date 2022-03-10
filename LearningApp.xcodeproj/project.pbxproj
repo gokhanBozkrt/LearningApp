@@ -21,6 +21,7 @@
 		F75AF2B527D351DA008C053A /* ContentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75AF2B427D351DA008C053A /* ContentViews.swift */; };
 		F774888527D0A83000644090 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774888427D0A83000644090 /* Models.swift */; };
 		F797A92E27D8BE0A005B965D /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797A92D27D8BE0A005B965D /* CodeTextView.swift */; };
+		F7AE46E127DA7969005964CE /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AE46E027DA7969005964CE /* RectangleCard.swift */; };
 		F7C8A8FC27D3A56500FEB47C /* ContentIViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		F75AF2B427D351DA008C053A /* ContentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViews.swift; sourceTree = "<group>"; };
 		F774888427D0A83000644090 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F797A92D27D8BE0A005B965D /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		F7AE46E027DA7969005964CE /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentIViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				F7C8A8FB27D3A56500FEB47C /* ContentIViewRow.swift */,
 				F71BE80B27D4B85A000F32F7 /* ContentDetailView.swift */,
 				F797A92D27D8BE0A005B965D /* CodeTextView.swift */,
+				F7AE46E027DA7969005964CE /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				F797A92E27D8BE0A005B965D /* CodeTextView.swift in Sources */,
 				F732A06627CFE25D00C3A329 /* ContentModel.swift in Sources */,
 				F774888527D0A83000644090 /* Models.swift in Sources */,
+				F7AE46E127DA7969005964CE /* RectangleCard.swift in Sources */,
 				F71BE81127D4C2C2000F32F7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
