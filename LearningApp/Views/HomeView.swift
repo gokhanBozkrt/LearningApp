@@ -21,19 +21,27 @@ struct HomeView: View {
                     LazyVStack {
                         ForEach(model.modules) { module in
                             VStack(spacing:20){
-                                NavigationLink(tag: module.id, selection: $model.currentContentSelected ) {
-                                   ContentViews().onAppear {
-                                       model.beginModule(module.id)
-                                   }
-                                    
+                                NavigationLink(tag: module.id, selection: $model.currentContentSelected )
+                                {
+                                    ContentViews().onAppear {
+                                        model.beginModule(module.id)
+                                     //   print(model.currentContentSelected)
+                                    }
                                 } label: {
                                     // Learning Card
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                                    
                                 }
-
-                                // Test Card
-                                HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Questions", time: module.test.time)
+                                
+                                NavigationLink(tag: module.id, selection: $model.currentTestSelected) {
+                                    TestView().onAppear() {
+                                        model.beginTest(module.id)
+                                    }
+                                } label: {
+                                    // Test Card
+                                    HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Questions", time: module.test.time)
+                                }
+                                
+                                
                             }
                             
                         }
@@ -53,13 +61,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(ContentModel())
-.previewInterfaceOrientation(.portrait)
+            .previewInterfaceOrientation(.portrait)
     }
 }
 
 
-/*
- .onAppear {
-     model.beginModule(module.id)
- }
- */

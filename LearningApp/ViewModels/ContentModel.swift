@@ -16,12 +16,17 @@ class ContentModel: ObservableObject {
     // Current Lesson
     @Published var currentLesson:Lesson?
     var currentLessonIndex = 0
+    // Current Question
+    @Published var currentQuestion:Question?
+    var currentQuestionIndex = 0
     // Cureent Lesson Explanation
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     var styleData:Data?
     
     // Current Selected Content and test
     @Published var currentContentSelected:Int?
+    @Published var currentTestSelected:Int?
+    
     init() {
         getLocalData()
     }
@@ -75,11 +80,23 @@ class ContentModel: ObservableObject {
             currentLessonIndex = 0
         }
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-         lessonDescription = addStyling(currentLesson!.explanation)
+         codeText = addStyling(currentLesson!.explanation)
     }
     
     func hasNextLesson() -> Bool {
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
+    }
+    // MARK:Question
+    func beginTest(_ moduleId:Int) {
+        // Set the current module
+        beginModule(moduleId)
+        // Set the current question
+        currentQuestionIndex = 0
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            }
+        // Set the question content as well
+        codeText = addStyling(currentQuestion!.content)
     }
     
     // Next lesson
@@ -91,11 +108,11 @@ class ContentModel: ObservableObject {
             // Set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
         } else {
-            // Reset the currenlesson index
+            // Reset the currentlesson index
             currentLessonIndex = 0
             currentLesson = nil
         }
-        lessonDescription = addStyling(currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
         
     }
    // MARK: Code Styling
