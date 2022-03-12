@@ -48,9 +48,12 @@ struct HomeViewRow: View {
                         // Number of lessons/questions
                         Image(systemName: "text.book.closed")
                             .resizable()
-                            .frame(width: 15, height: 15)
+                           
+                           .frame(width: 15, height: 15)
                         Text(count)
                             .font(Font.system(size: 10))
+                            
+
                         Spacer()
                         // Time
                         Image(systemName: "clock")

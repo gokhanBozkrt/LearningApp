@@ -49,11 +49,11 @@ struct HomeView: View {
                     .accentColor(.black)
                     .padding()
                 }
-            }
+            } //.background(Color.indigo)
+              .navigationTitle("Get Started")
             
-            .navigationTitle("Get Started")
         }
-        .navigationViewStyle(.stack)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -62,6 +62,7 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
             .environmentObject(ContentModel())
             .previewInterfaceOrientation(.portrait)
+        
     }
 }
 
