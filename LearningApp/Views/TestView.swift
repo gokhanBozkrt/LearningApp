@@ -15,7 +15,7 @@ struct TestView: View {
 
     var body: some View {
         
-        VStack {
+       VStack {
             if model.currentQuestion != nil {
                 VStack(alignment:.leading) {
                     // Question Number
@@ -37,7 +37,7 @@ struct TestView: View {
                                         if submitted == false {
                                         RectangleCard(colour: selectedAnswerIndex == index ? .gray : .white)
                                             .frame(height: 48)
-                                        } else { 
+                                        } else {
                                             // Answer submitted
                                             if index == selectedAnswerIndex && index == model.currentQuestion!.correctIndex {
                                                 RectangleCard(colour: .green)
@@ -65,15 +65,28 @@ struct TestView: View {
                     }
                     // Submit Button
                     Button {
-                        // Change Submit state to true
-                        submitted = true
+                        // Check if answer submitted
+                        if submitted == true {
+                            // answer alrady submitted
+                            model.nextQuestion()
+                            submitted = false
+                            selectedAnswerIndex = nil
+                        } else {
+                            // Submit the answer
+                            // Change Submit state to true
+                            submitted = true
+                            if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                                numCorrect += 1
+                            }
+                        }
+                      
                         
                     } label: {
                         ZStack {
                             RectangleCard(colour: .green)
                                 .frame(height: 48)
                             
-                            Text("Submit")
+                            Text(buttonText)
                                 .bold()
                                 .foregroundColor(.white)
                               
@@ -87,6 +100,20 @@ struct TestView: View {
             }
         }
         
+    }
+    
+    var buttonText:String {
+        // Check answer is submitted
+        if submitted == true {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                return "Finish"
+            } else {
+                return "Next"
+            }
+            
+        } else {
+            return "Submit"
+        }
     }
 }
 
