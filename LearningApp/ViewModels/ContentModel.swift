@@ -29,6 +29,7 @@ class ContentModel: ObservableObject {
     
     init() {
         getLocalData()
+        getRemoteData()
     }
     // Mark:Data Methods
     func getLocalData() {
@@ -57,6 +58,48 @@ class ContentModel: ObservableObject {
             print("error")
         }
    }
+    // Remote Data
+    
+    func getRemoteData() {
+        // String path
+        let urlString = "https://gokhanbozkrt.github.io/LearningApp-data2/data2.json"
+        
+        // Create Url object
+        let url = URL(string: urlString)
+        guard url != nil else {
+            // Couldnt create url
+            return
+        }
+        // Create url request object
+        let request = URLRequest(url: url!)
+        // Get the session kick off the task
+        let session = URLSession.shared
+       let dataTask = session.dataTask(with: request) { data, response, error in
+            // Check if there's in an error
+           guard error == nil else {
+               return
+           }
+            // Handle the response, Create Json Decoder
+           
+           
+          // Decode
+           do {
+               let decoder = JSONDecoder()
+              let moduleList = try decoder.decode([Module].self, from: data!)
+               // Append parsed modules into property
+               self.modules += moduleList
+           }
+           catch {
+               print(error)
+           }
+            
+        }
+        // Kick off the data task
+        dataTask.resume()
+        
+        
+    }
+    
     // MARK:Module Navigation Methods
     func beginModule(_ moduleId:Int) {
         // Find find the index for this module id
