@@ -87,7 +87,9 @@ class ContentModel: ObservableObject {
                let decoder = JSONDecoder()
               let moduleList = try decoder.decode([Module].self, from: data!)
                // Append parsed modules into property
-               self.modules += moduleList
+               DispatchQueue.main.async {
+                   self.modules += moduleList
+               }
            }
            catch {
                print(error)
@@ -165,13 +167,18 @@ class ContentModel: ObservableObject {
         // Check that it is within the range
         if currentLessonIndex < currentModule!.content.lessons.count {
             // Set the current lesson property
-            currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            DispatchQueue.main.async {
+                self.currentLesson = self.currentModule!.content.lessons[self.currentLessonIndex]
+
+            }
         } else {
             // Reset the currentlesson index
             currentLessonIndex = 0
             currentLesson = nil
         }
-        codeText = addStyling(currentLesson!.explanation)
+        DispatchQueue.main.async {
+            self.codeText = self.addStyling(self.currentLesson!.explanation)
+}
         
     }
    // MARK: Code Styling
