@@ -23,7 +23,9 @@ struct HomeView: View {
                             VStack(spacing:20){
                                 NavigationLink(tag: module.id, selection: $model.currentContentSelected )
                                 {
-                                    ContentViews().onAppear {
+                                    ContentViews()
+                                        
+                                        .onAppear {
                                         model.beginModule(module.id)
                                      //   print(model.currentContentSelected)
                                     }
@@ -55,6 +57,17 @@ struct HomeView: View {
             
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onChange(of: model.currentContentSelected) { changedValue in
+            if changedValue == nil {
+                model.currentModule = nil
+            }
+        }
+        .onChange(of: model.currentTestSelected) { changedValue in
+            if changedValue == nil {
+                model.currentModule = nil
+            }
+            
+        }
     }
 }
 
